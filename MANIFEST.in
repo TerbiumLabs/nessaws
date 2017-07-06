@@ -1,0 +1,18 @@
+global-exclude *.py[cod]
+global-exclude __pycache__
+
+graft docs
+graft requirements/lck
+graft src
+graft tests
+
+include .coveragerc
+include .editorconfig
+include .travis.yml
+include tox.ini
+
+include AUTHORS
+include CHANGELOG.rst
+include LICENSE
+include MANIFEST.in
+include README.rst

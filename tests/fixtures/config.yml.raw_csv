@@ -1,0 +1,27 @@
+nessus_url: "https://localhost:8834"
+nessus_username: "nessus"
+nessus_password: "password"
+nessus_secure: True
+nessus_source: 1.2.3.4
+aws_accounts:
+  - aws_access_key_id: ""
+    aws_secret_access_key: ""
+    region: "us-east-1"
+    root_email: "pentest@terbiumlabs.com"
+    tag_key: "NessAWS"
+    account_name: "Terbium Labs"
+    account_number: 1234567890
+always_use_private_ip: True
+smtp_host: "email-host.com"
+smtp_port: 587
+smtp_username: "root"
+smtp_password: "password"
+smtp_sendas: "pentest@test.com"
+smtp_to: "aws-pentest-email@aws.com"
+smtp_cc: "test@example.com"
+smtp_subject: "AWS Pentest Request"
+smtp_tls: True
+comments: "Nothing to see here"
+start_date: "Wed, 01 Mar 1969 17:27:40 GMT"
+end_date: "Mon, 20 Mar 2069 17:27:40 GMT"
+output: "raw_csv"
