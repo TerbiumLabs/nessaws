@@ -80,7 +80,7 @@ for an example. The following options are configurable:
 - **comments** (Optional str): Additional comments to attach with the penetration test request. Defaults to *None*.
 - **start_date** (Required str): The RFC 1123 datetime that the scan will begin, used for submitting the penetration test request.
 - **end_date** (Required str): The RFC 1123 datetime that the scan will complete, used for submitting the penetration test request.
-- **output** (Optional str): Specify one output option. Currently supported options are "excel", "raw_csv", or "none". Specifying "excel" will export and combine all scans into one Microsoft Excel spreadsheet. Specifying "raw_csv" will export the scan files to CSV in the location where *nessaws* is ran. Specifying "none" will only run the Nessus scans but perform no exporting. Defaults to "excel".
+- **output** (Optional str): Specify one output option. Currently supported options are *excel*, *raw_csv*, or *none*. Specifying *excel* will export and combine all scans into one Microsoft Excel spreadsheet. Specifying *raw_csv* will export the scan files to CSV in the location where *nessaws* is ran. Specifying *none* will only run the Nessus scans but perform no exporting. Defaults to *excel*.
 
 EC2/RDS instances that you wish to be scanned must be tagged appropriately. Tags should
 configured like:
@@ -176,7 +176,7 @@ bypassed if necessary:
   Type "yes" or "no":
   yes
 
-If "excel" was entered in the output configuration, a Microsoft Excel report
+If *excel* was entered in the output configuration, a Microsoft Excel report
 (.xlsx) will be output at the completion of all scans. This
 report contains a summary sheet that includes each scan that was performed, its
 outcome, and the targets that were scanned. A results sheet containing the output
@@ -228,8 +228,9 @@ Contributing
 Bug reports and pull requests are welcome. If you would like to
 contribute, please create a pull request against master. Include unit
 tests if necessary, and ensure that your code passes all linters (see
-tox.ini).
+`tox.ini`_).
 
 .. _penetration test request to AWS: https://aws.amazon.com/security/penetration-testing/
 .. _PyPi: https://pypi.python.org/pypi/nessaws
 .. _config.yml.sample: https://github.com/TerbiumLabs/nessaws/blob/master/config.yml.sample
+.. _tox.ini: https://github.com/TerbiumLabs/nessaws/blob/master/tox.ini
