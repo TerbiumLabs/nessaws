@@ -132,6 +132,7 @@ def test_missing_report_file(mocked_excel):
                 'scan_name': 'test_scan',
                 'status': 'completed',
                 'result_file': 'test.csv',
+                'target_names': ['target1'],
                 'targets': [
                     {
                         'name': 'target1',

@@ -145,6 +145,7 @@ def perform_scan(ctx, options):
     for scan in state_object['scans']:
         scan_name = scan['scan_name']
         instance_ips = []
+        scan_target_names = []
         # get list of IPs to update on the nessus scan
         for target in scan['targets']:
             if target['type'] == 'ec2':
@@ -155,6 +156,12 @@ def perform_scan(ctx, options):
                         'public_ip') else str(target['private_ip']))
             if target['type'] == 'rds':
                 instance_ips.append(target['endpoint'])
+
+            # keep a flat list of target names for reporting purposes
+            scan_target_names.append(
+                target['name'] if target.get('name') else target['id'])
+
+        scan['target_names'] = scan_target_names
 
         # launch scan with the IPs of the scans
         logger.info('Launching scan {}'.format(scan_name))
@@ -167,7 +174,7 @@ def perform_scan(ctx, options):
             logger.warning(
                 'Unable to find a Nessus scan with name "{}", the '
                 'following instances will not be scanned:\n\n {}'.format(
-                    scan_name, ', '.join(instance_ips)))
+                    scan_name, ', '.join(scan_target_names)))
 
     #  poll scans for completion
     successful_scan = False
@@ -216,7 +223,7 @@ def perform_scan(ctx, options):
                             'Nessus scan "{}" was not completed '
                             'successfully, the following instances may not '
                             'have been scanned:\n\n {}'.format(
-                                scan_name, ', '.join(instance_ips)))
+                                scan_name, ', '.join(scan['target_names'])))
                 else:
                     logger.info(
                         'Waiting for scan "{}" to be completed...'.format(

@@ -32,7 +32,7 @@ addresses of each instance, and submit a penetration testing request to AWS (via
 After the request has been approved, **nessaws** can be launched again to start the
 desired Nessus scans against the discovered instances.
 
-After each scan is complete, **nessaws** will combine all scan results into a
+After each scan is complete, **nessaws** can combine all scan results into a
 single Microsoft Excel (.xlsx) file. As an added bonus, each host in the scan will
 be checked to ensure authenticated checks have succeeded.
 
@@ -80,7 +80,7 @@ for an example. The following options are configurable:
 - **comments** (Optional str): Additional comments to attach with the penetration test request. Defaults to *None*.
 - **start_date** (Required str): The RFC 1123 datetime that the scan will begin, used for submitting the penetration test request.
 - **end_date** (Required str): The RFC 1123 datetime that the scan will complete, used for submitting the penetration test request.
-- **output** (Optional str): Specify one output option. Currently supported options are *excel*, *raw_csv*, or *none*. Specifying *excel* will export and combine all scans into one Microsoft Excel spreadsheet. Specifying *raw_csv* will export the scan files to CSV in the location where *nessaws* is ran. Specifying *none* will only run the Nessus scans but perform no exporting. Defaults to *excel*.
+- **output** (Optional str): Specify one output option. Currently supported options are *excel*, *raw_csv*, or *none*. Specifying *excel* will export and combine all scans into one Microsoft Excel spreadsheet. Specifying *raw_csv* will export the scan files to CSV in the location where **nessaws** is ran. Specifying *none* will only run the Nessus scans but perform no exporting. Defaults to *excel*.
 
 EC2/RDS instances that you wish to be scanned must be tagged appropriately. Tags should
 configured like:

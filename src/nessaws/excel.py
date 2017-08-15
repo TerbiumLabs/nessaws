@@ -71,12 +71,8 @@ def write_excel_output(results):
     for scan in results['scans']:
         scan_name = WriteOnlyCell(summary_sheet, value=scan['scan_name'])
         scan_status = WriteOnlyCell(summary_sheet, value=scan['status'])
-        scan_target_names = []
-        for target in scan['targets']:
-            scan_target_names.append(
-                target['name'] if target.get('name') else target['id'])
         scan_targets = WriteOnlyCell(
-            summary_sheet, value=', '.join(scan_target_names))
+            summary_sheet, value=', '.join(scan['target_names']))
         scan_credentialed_targets = WriteOnlyCell(
             summary_sheet, value=len(scan.get('credentialed_hosts', [])))
         scan_uncredentialed_targets = WriteOnlyCell(
