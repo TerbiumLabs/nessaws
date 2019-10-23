@@ -48,7 +48,7 @@ s3transfer==0.1.10        # via boto3
 six==1.10.0               # via mock, packaging, python-dateutil, requests-mock, responses, setuptools
 translationstring==1.3    # via colander
 Unidecode==0.4.20         # via python-slugify
-werkzeug==0.12.1
+werkzeug==0.15.3
 xmltodict==0.10.2
 
 # The following packages are considered to be unsafe in a requirements file:
