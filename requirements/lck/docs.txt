@@ -27,7 +27,7 @@ netaddr==0.7.19
 openpyxl==2.4.4
 pockets==0.3.2            # via sphinxcontrib-napoleon
 progress==1.2
-Pygments==2.2.0           # via sphinx
+Pygments==2.7.4           # via sphinx
 python-dateutil==2.6.0    # via botocore
 python-slugify==1.2.4
 pytz==2017.2              # via babel, colander-tools
